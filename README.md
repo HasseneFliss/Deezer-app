@@ -3,6 +3,13 @@
 ## Badges
 [![CircleCI](https://circleci.com/gh/FRossouw/Deezer-app.svg?style=svg)](https://circleci.com/gh/FRossouw/Deezer-app)
 
+## Project Links 
+### Hosting URL
+https://deezer-6cd6d.firebaseapp.com
+
+### Project Console
+https://console.firebase.google.com/project/deezer-6cd6d/overview
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
