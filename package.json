@@ -2,6 +2,7 @@
   "name": "deezer-app",
   "version": "0.0.0",
   "scripts": {
+    "deploy": "ng build && firebase deploy",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -19,6 +20,7 @@
     "@angular/platform-browser": "~9.0.6",
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
+    "firebase": "^7.12.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -45,7 +47,6 @@
     "typescript": "~3.7.5"
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.",
-  "main": "./src/index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FRossouw/Deezer-app.git"
