@@ -9,6 +9,7 @@ import { ArtistsComponent } from './artists/artists.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FanFormatterPipe } from './pipes/fan-formatter.pipe';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
+import { TracklistComponent } from './tracklist/tracklist.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ArtistDetailsComponent } from './artist-details/artist-details.componen
     ArtistComponent,
     ArtistsComponent,
     FanFormatterPipe,
-    ArtistDetailsComponent
+    ArtistDetailsComponent,
+    TracklistComponent
   ],
   imports: [
     BrowserModule,
