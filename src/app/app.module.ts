@@ -8,13 +8,15 @@ import { ArtistComponent } from './artist/artist.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FanFormatterPipe } from './pipes/fan-formatter.pipe';
+import { ArtistDetailsComponent } from './artist-details/artist-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArtistComponent,
     ArtistsComponent,
-    FanFormatterPipe
+    FanFormatterPipe,
+    ArtistDetailsComponent
   ],
   imports: [
     BrowserModule,

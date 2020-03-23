@@ -1,0 +1,19 @@
+.artist-details-card {
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;  
+
+    .artist-details-top-tracks {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 1920px) {
+    .artist-details-card {
+
+        .artist-details-image {
+            background-color: blue;
+            flex-grow: 1;
+        } 
+    }
+}
