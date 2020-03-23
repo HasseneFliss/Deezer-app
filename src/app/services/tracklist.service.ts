@@ -9,7 +9,7 @@ import { Tracklist } from '../models/tracklist';
 })
 export class TracklistService {
   constructor(private http: HttpClient) { }
-  getTracklsit(query?: number): Observable<Tracklist> {
+  getTracklist(query?: number): Observable<Tracklist> {
     return this.http.get<Tracklist>(`${environment.apiUrl}${query}/top?limit=5`);
   }
 }
