@@ -1,5 +1,3 @@
-import { Url } from 'url';
-
 export class Artist {
     id: number;
     name: string;

@@ -7,7 +7,7 @@ import { Artist } from '../models/artist';
   styleUrls: ['./artist.component.scss']
 })
 export class ArtistComponent implements OnInit {
-
+  
   @Input()
   artist: Artist;
   constructor() { }

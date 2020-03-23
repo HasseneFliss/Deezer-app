@@ -1,5 +1,7 @@
 import { Artist } from './artist';
 
 export class Artists {
-    artistList: Artist[];
+    constructor() {}
+
+    artists: Artist[] = new Array;
 }
