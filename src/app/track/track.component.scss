@@ -1,0 +1,13 @@
+li {
+    display: flex;
+    flex-wrap: wrap;
+
+    h4, h5{
+        display: inline;
+        margin: 0px;
+    }
+
+    h5 {
+        float: right;
+    }
+}
