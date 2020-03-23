@@ -1,1 +1,8 @@
-<p>tracklist works!</p>
+<div class="tracklist" *ngIf="tracks">
+    <h1>Top tracks</h1>
+    <ol>
+        <ng-container *ngFor="let track of tracks">
+            <app-track [track]="track"></app-track>
+        </ng-container>
+    </ol>   
+</div>

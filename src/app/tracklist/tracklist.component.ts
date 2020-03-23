@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TracklistService } from '../services/tracklist.service';
 import { Tracklist } from '../models/tracklist';
+import { Track } from '../models/track';
 
 @Component({
   selector: 'app-tracklist',
@@ -10,6 +11,7 @@ import { Tracklist } from '../models/tracklist';
 export class TracklistComponent implements OnInit {
 
   tracklist: Tracklist;
+  tracks: Track[];
 
   constructor(private tracklistService: TracklistService) { }
 
@@ -17,9 +19,9 @@ export class TracklistComponent implements OnInit {
     this.tracklistService.getTracklist(2)
       .subscribe((x) => {
         this.tracklist = x;
-        console.log('Tracklist');
-        console.log(this.tracklist);
+        this.tracks = this.tracklist.data;
       });
+      
   }
 
 }
