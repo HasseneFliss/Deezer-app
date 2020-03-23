@@ -8,7 +8,7 @@ import { Artist } from '../models/artist';
 })
 export class ArtistComponent implements OnInit {
   @Input()
-  artist: Artist();
+  artist: Artist;
   constructor() { }
 
   ngOnInit(): void {
