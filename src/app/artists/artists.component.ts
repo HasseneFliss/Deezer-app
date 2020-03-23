@@ -18,11 +18,14 @@ export class ArtistsComponent implements OnInit {
 
   ngOnInit(): void {
     this.artistList = new Artists();
-    for (let artistNo = 2; artistNo <= 11; artistNo++) {
+    for (let artistNo = 2; artistNo <= 22; artistNo++) {
       this.artistService.getArtist(artistNo)
         .subscribe((x) => {
-          this.artist = x;
-          this.artists.push(this.artist);
+          if (!('error' in x)) {
+            this.artist = x;
+            this.artists.push(this.artist);
+          }
+
         });
     }
     this.artistList.artists = this.artists;
