@@ -8,9 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ArtistService {
-
   constructor(private http: HttpClient) { }
-  
   getArtists(query?: string): Observable<Artist> {
     return this.http.get<Artist>(`${environment.apiUrl}${query}`);
   }
