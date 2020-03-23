@@ -7,12 +7,14 @@ import { environment } from '../environments/environment';
 import { ArtistComponent } from './artist/artist.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FanFormatterPipe } from './pipes/fan-formatter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArtistComponent,
-    ArtistsComponent
+    ArtistsComponent,
+    FanFormatterPipe
   ],
   imports: [
     BrowserModule,
