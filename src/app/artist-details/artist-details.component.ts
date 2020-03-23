@@ -9,8 +9,6 @@ export class ArtistDetailsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  
-  }
+  ngOnInit(): void { }
 
 }
