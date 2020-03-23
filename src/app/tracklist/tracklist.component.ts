@@ -6,7 +6,7 @@ import { Track } from '../models/track';
 @Component({
   selector: 'app-tracklist',
   templateUrl: './tracklist.component.html',
-  styleUrls: ['./tracklist.component.css']
+  styleUrls: ['./tracklist.component.scss']
 })
 export class TracklistComponent implements OnInit {
 
@@ -21,7 +21,6 @@ export class TracklistComponent implements OnInit {
         this.tracklist = x;
         this.tracks = this.tracklist.data;
       });
-      
   }
 
 }
