@@ -17,7 +17,7 @@ export class ArtistsComponent implements OnInit {
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    this.artistList = new Artists;
+    this.artistList = new Artists();
     for (let artistNo = 2; artistNo <= 11; artistNo++) {
       this.artistService.getArtist(artistNo)
         .subscribe((x) => {
