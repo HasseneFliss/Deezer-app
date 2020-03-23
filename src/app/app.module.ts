@@ -11,6 +11,7 @@ import { FanFormatterPipe } from './pipes/fan-formatter.pipe';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
 import { TracklistComponent } from './tracklist/tracklist.component';
 import { TrackComponent } from './track/track.component';
+import { DurationFormatterPipe } from './pipes/duration-formatter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TrackComponent } from './track/track.component';
     FanFormatterPipe,
     ArtistDetailsComponent,
     TracklistComponent,
-    TrackComponent
+    TrackComponent,
+    DurationFormatterPipe
   ],
   imports: [
     BrowserModule,
