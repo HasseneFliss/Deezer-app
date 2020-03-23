@@ -1,15 +1,7 @@
 {
   "extends": "tslint:recommended",
   "rules": {
-    "variable-name": {
-      "options": [
-        "ban-keywords",
-        "check-format",
-        "allow-leading-underscore",
-        "allow-pascal-case",
-        "allow-snake-case"
-      ]
-    },
+    "variable-name": [true, "check-format", "allow-snale-case"],
     "array-type": false,
     "arrow-parens": false,
     "deprecation": {
