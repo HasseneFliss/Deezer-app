@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FanFormatterPipe implements PipeTransform {
 
   transform(value: number): string {
-    value = Math.floor(value/1000);
+    value = Math.floor(value / 1000);
     return `${value}k Fans`;
   }
 }
