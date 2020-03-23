@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ArtistComponent } from './artist/artist.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,
