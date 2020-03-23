@@ -1,8 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Models (Because we map the data as received -> can not be linted as the variables are now)
-/src/Models/artist.ts
-
 # compiled output
 /dist
 /tmp
