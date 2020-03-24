@@ -1,0 +1,32 @@
+@import '../../style-variables.scss';
+
+.artist-details-card {
+    background-color: $secondary-color;
+    display: flex;
+    flex-wrap: wrap;  
+    color: $font-color-secondary;
+    height: 300px;
+
+    .artist-details-image h1, h2 {
+        color: $font-color-main;
+        background-color: $base-color;
+        padding: 20px;
+        margin: 0px;
+        opacity: 0.5;
+    } 
+    
+}
+
+@media only screen and (max-width: 1920px) {
+    .artist-details-card {
+
+        .artist-details-image {
+            background-color: $base-color;
+            flex-grow: 1;
+        } 
+
+        .artist-details-top-tracks {
+            width: 600px;
+        }
+    }
+}
