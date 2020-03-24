@@ -1,5 +1,5 @@
 <div class="artist-card">
-    <a href="#">
+    <a [routerLink]="['/details', artist.id]" [state]="{artist: artist}">
         <div class="artist-image">
             <img src="{{artist.picture_medium}}" alt="image not found">
 

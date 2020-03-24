@@ -16,11 +16,15 @@ export class TracklistComponent implements OnInit {
   constructor(private tracklistService: TracklistService) { }
 
   ngOnInit(): void {
-    this.tracklistService.getTracklist(2)
+    console.log("Reading tracklist data");
+    this.tracklistService.getTracklist()
       .subscribe((x) => {
         this.tracklist = x;
         this.tracks = this.tracklist.data;
+        console.log(this.tracks);
       });
+    
+    console.log("Done reading data");
   }
 
 }

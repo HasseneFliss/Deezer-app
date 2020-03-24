@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Artist } from '../models/artist';
+import { ArtistService } from '../services/artist.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-artist-details',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistDetailsComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  artist: Artist;
+  router: Router;
+
+  constructor() {
+    this.artist = history.state.artist;
+  }
 
   ngOnInit(): void { }
 

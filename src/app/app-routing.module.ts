@@ -11,7 +11,13 @@ const routes: Routes = [
   },
   {
     path: 'details',
-    component: ArtistDetailsComponent
+    component: ArtistDetailsComponent,
+    children: [
+      {
+        path: ':id',
+        component: ArtistDetailsComponent
+      }
+    ]
   },
   {
     path: '',

@@ -14,6 +14,7 @@ import { ArtistDetailsComponent } from './artist-details/artist-details.componen
 import { TracklistComponent } from './tracklist/tracklist.component';
 import { TrackComponent } from './track/track.component';
 import { DurationFormatterPipe } from './pipes/duration-formatter.pipe';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DurationFormatterPipe } from './pipes/duration-formatter.pipe';
     BrowserModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     HttpClientModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
