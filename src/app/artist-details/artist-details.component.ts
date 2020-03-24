@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Artist } from '../models/artist';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-artist-details',
@@ -11,7 +10,6 @@ export class ArtistDetailsComponent implements OnInit {
 
   @Input()
   artist: Artist;
-  router: Router;
 
   constructor() {
     this.artist = history.state.artist;

@@ -1,0 +1,15 @@
+.album-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    .album-card {
+        width: 300px;
+
+        .album-cover {
+            img {
+                width: 300px;
+            }
+            
+        }
+    }
+}
