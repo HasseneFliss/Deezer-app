@@ -5,11 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DurationFormatterPipe implements PipeTransform {
 
-  transform(duration: number): String {
-    var time = new Date(duration * 1000);
-    var minutes = time.getUTCMinutes();
-    var seconds = time.getUTCSeconds();
-    return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+  transform(duration: number): string {
+    const time = new Date(duration * 1000);
+    const minutes = time.getUTCMinutes();
+    const seconds = time.getUTCSeconds();
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   }
 
 }
