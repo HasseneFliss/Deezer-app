@@ -1,7 +1,10 @@
+@import '../../style-variables.scss';
+
 .artist-details-card {
-    background-color: red;
+    background-color: $secondary-color;
     display: flex;
     flex-wrap: wrap;  
+    color: $font-color-secondary;
 
     .artist-details-top-tracks {
         width: 600px;

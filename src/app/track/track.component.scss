@@ -1,6 +1,8 @@
+@import '../../style-variables.scss';
+
 li {
-    display: flex;
-    flex-wrap: wrap;
+    
+    border-bottom: 1px solid black;
 
     h4, h5{
         display: inline;
@@ -8,11 +10,11 @@ li {
     }
 
     h4 {
-        width: 80%;
+        width: 90%;
     }
 
     h5 {
         float: right;
-        width: 20%;
+        width: 10%;
     }
 }
