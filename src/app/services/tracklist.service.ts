@@ -17,7 +17,6 @@ export class TracklistService {
 
   getTracklist(): Observable<Tracklist> {
     this.artist = history.state.artist;
-    console.log("ID: --- " + this.artist.id);
     return this.http.get<Tracklist>(`${environment.apiUrl}${this.artist.id}/top?limit=5`);
   }
 }
