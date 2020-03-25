@@ -15,14 +15,8 @@ const routes: Routes = [
     component: AlbumComponent
   },
   {
-    path: 'details',
-    component: ArtistDetailsComponent,
-    children: [
-      {
-        path: ':id',
-        component: ArtistDetailsComponent
-      }
-    ]
+    path: 'details/:id',
+    component: ArtistDetailsComponent
   },
   {
     path: '',

@@ -15,8 +15,7 @@ export class TracklistService {
 
   constructor(private http: HttpClient) { }
 
-  getTracklist(): Observable<Tracklist> {
-    this.artist = history.state.artist;
-    return this.http.get<Tracklist>(`${environment.apiUrl}${this.artist.id}/top?limit=5`);
+  getTracklist(artistId: number): Observable<Tracklist> {
+    return this.http.get<Tracklist>(`${environment.apiUrl}${artistId}/top?limit=5`);
   }
 }
