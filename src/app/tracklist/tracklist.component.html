@@ -1,4 +1,7 @@
-<ng-container *ngIf="tracks">
+<ng-container *ngIf="tracks; then tracksLoaded; else notTracksLoaded">
+</ng-container>
+
+<ng-template #tracksLoaded>
     <div class="tracklist">
         <h1>Top tracks</h1>
         <ol>
@@ -7,4 +10,8 @@
             </ng-container>
         </ol>
     </div>
-</ng-container>
+</ng-template>
+
+<ng-template #notTracksLoaded>
+    <app-loading></app-loading>
+</ng-template>

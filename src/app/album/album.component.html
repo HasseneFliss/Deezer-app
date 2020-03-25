@@ -1,5 +1,9 @@
 <h1>Albums</h1>
-<ng-container *ngIf="album_list">
+<ng-container *ngIf="album_list; then albumLoaded; else notAlbumLoaded">
+    
+</ng-container>
+
+<ng-template #albumLoaded>
     <div class="album-container">
         <ng-container *ngFor="let album of album_list">
             <div class="album-card">
@@ -13,4 +17,9 @@
             </div>
         </ng-container>
     </div>
-</ng-container>
+</ng-template>
+
+<ng-template #notAlbumLoaded>
+    <app-loading></app-loading>
+</ng-template>
+
