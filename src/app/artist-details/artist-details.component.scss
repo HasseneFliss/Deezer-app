@@ -5,13 +5,13 @@
     display: flex;
     flex-wrap: wrap;
     color: $font-color-secondary;
-    height: 300px;
 
   .artist-details-image {
     background-color: darken($base-color, 80%);
     padding: 20px;
     margin: 0px;
     opacity: 0.8;
+    flex-grow: 1;
   }
 
   h1, h2 {
@@ -34,7 +34,7 @@
 
 }
 
-@media only screen and (max-width: 1920px) {
+@media only screen and (min-width: 1920px) {
   .artist-details-card {
     .artist-details-image {
       background-color: $base-color;

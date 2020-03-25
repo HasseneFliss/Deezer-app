@@ -3,7 +3,7 @@
 .album-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 
     .album-card {
         width: 300px;
