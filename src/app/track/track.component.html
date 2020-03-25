@@ -1,1 +1,3 @@
-<li><h4>{{track.title}}</h4><h5>{{track.duration | durationFormatter }}</h5></li>
+<ng-container *ngIf="track">
+    <li><h4>{{track.title}}</h4><h5>{{track.duration | durationFormatter }}</h5></li>
+</ng-container>

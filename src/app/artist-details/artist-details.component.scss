@@ -1,32 +1,48 @@
-@import '../../style-variables.scss';
+@import "../../style-variables.scss";
 
 .artist-details-card {
     background-color: $secondary-color;
     display: flex;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
     color: $font-color-secondary;
     height: 300px;
 
-    .artist-details-image h1, h2 {
-        color: $font-color-main;
-        background-color: $base-color;
-        padding: 20px;
-        margin: 0px;
-        opacity: 0.5;
-    } 
-    
+  .artist-details-image {
+    background-color: darken($base-color, 80%);
+    padding: 20px;
+    margin: 0px;
+    opacity: 0.8;
+  }
+
+  h1, h2 {
+    -webkit-text-fill-color: $font-color-main;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $base-color;
+
+    padding-left: 20px;
+    margin: 0px;
+  }
+
+  h1 {
+      margin-top: 20px;
+      font-size: 4rem;
+  }
+
+  h2 {
+      font-size: 2rem;
+  }
+
 }
 
 @media only screen and (max-width: 1920px) {
-    .artist-details-card {
-
-        .artist-details-image {
-            background-color: $base-color;
-            flex-grow: 1;
-        } 
-
-        .artist-details-top-tracks {
-            width: 600px;
-        }
+  .artist-details-card {
+    .artist-details-image {
+      background-color: $base-color;
+      flex-grow: 1;
     }
+
+    .artist-details-top-tracks {
+      width: 600px;
+    }
+  }
 }
