@@ -14,11 +14,11 @@ export class ArtistDetailsComponent implements OnInit {
   artist: Artist;
   artistId: number;
 
-  constructor(private Activatedroute: ActivatedRoute, private artistService: ArtistService) {
+  constructor(private activatedroute: ActivatedRoute, private artistService: ArtistService) {
   }
 
   ngOnInit(): void {
-    this.Activatedroute.paramMap.subscribe(params => {
+    this.activatedroute.paramMap.subscribe(params => {
       this.artistId = Number(params.get('id'));
       console.log(this.artistId);
 

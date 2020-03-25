@@ -15,11 +15,11 @@ export class TracklistComponent implements OnInit {
   tracks: Track[];
   artistId: number;
 
-  constructor(private Activatedroute: ActivatedRoute, private tracklistService: TracklistService) { }
+  constructor(private activatedroute: ActivatedRoute, private tracklistService: TracklistService) { }
 
   ngOnInit(): void {
 
-    this.Activatedroute.paramMap.subscribe(params => {
+    this.activatedroute.paramMap.subscribe(params => {
       this.artistId = Number(params.get('id'));
       console.log(this.artistId);
     });
