@@ -16,6 +16,7 @@ import { TrackComponent } from './track/track.component';
 import { DurationFormatterPipe } from './pipes/duration-formatter.pipe';
 import { FormsModule } from '@angular/forms';
 import { AlbumComponent } from './album/album.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AlbumComponent } from './album/album.component';
     TracklistComponent,
     TrackComponent,
     DurationFormatterPipe,
-    AlbumComponent
+    AlbumComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
