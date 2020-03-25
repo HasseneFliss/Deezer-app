@@ -20,7 +20,6 @@ export class TracklistComponent implements OnInit {
       .subscribe((x) => {
         this.tracklist = x;
         this.tracks = this.tracklist.data;
-        console.log(this.tracks);
       });
   }
 

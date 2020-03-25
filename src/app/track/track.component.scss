@@ -1,8 +1,10 @@
 @import '../../style-variables.scss';
 
 li {
-    
-    border-bottom: 1px solid black;
+    width: 100%;
+    border-bottom: 1px solid $base-color;
+    margin-bottom: 2.5%;
+    color: lighten($base-color, 20%);
 
     h4, h5{
         display: inline;
@@ -10,11 +12,27 @@ li {
     }
 
     h4 {
-        width: 90%;
+        width: 100%;
     }
 
     h5 {
         float: right;
-        width: 10%;
+        width: 100%;
+        text-align: right;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    li {
+
+        h4 {
+            width: 80%;
+        }
+    
+        h5 {
+            float: right;
+            width: 10%;
+            text-align: right;
+        }
     }
 }

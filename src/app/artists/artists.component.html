@@ -1,5 +1,14 @@
-<div class="artists-container" *ngIf="artists">
-    <ng-container *ngFor="let artist of artists">
-        <app-artist [artist]="artist"></app-artist>
-    </ng-container>
-</div>
+<ng-container *ngIf="artists; then loadedArtist; else notLoadedArtist">
+</ng-container>
+
+<ng-template #loadedArtist>
+    <div class="artists-container">
+        <ng-container *ngFor="let artist of artists">
+            <app-artist [artist]="artist"></app-artist>
+        </ng-container>
+    </div>
+</ng-template>
+
+<ng-template #notLoadedArtist>
+    <app-loading></app-loading>
+</ng-template>

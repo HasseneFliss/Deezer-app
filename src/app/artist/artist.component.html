@@ -1,13 +1,23 @@
-<div class="artist-card">
-    <a [routerLink]="['/details', artist.id]" [state]="{artist: artist}">
-        <div class="artist-image">
-            <img src="{{artist.picture_medium}}" alt="image not found">
+<ng-container *ngIf="artist; then artistLoaded; else notArtistLoaded">
 
-            <div class="artist-description">
-                <h2>{{artist.name}}</h2>
-                <h3>{{artist.nb_fan | fanFormatter}}</h3>
+</ng-container>
+
+<ng-template #artistLoaded>
+    <div class="artist-card">
+        <a [routerLink]="['/details', artist.id]" [state]="{artist: artist}">
+            <div class="artist-image">
+                <img src="{{artist.picture_medium}}" alt="image not found">
+
+                <div class="artist-description">
+                    <h2>{{artist.name}}</h2>
+                    <h3>{{artist.nb_fan | fanFormatter}}</h3>
+                </div>
+
             </div>
+        </a>
+    </div>
+</ng-template>
 
-        </div>
-    </a>
-</div>
+<ng-template #notArtistLoaded>
+    <app-loading></app-loading>
+</ng-template>
