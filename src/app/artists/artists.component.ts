@@ -29,8 +29,6 @@ export class ArtistsComponent implements OnInit {
         });
     }
     this.artistList.artists = this.artists;
-
-    console.log(this.artists);
   }
 
 }
