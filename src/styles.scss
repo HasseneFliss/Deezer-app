@@ -1,18 +1,169 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'style-variables.scss';
+@import "style-variables.scss";
 
 body {
-    background-color: $base-color;
-    padding: 0px 150px;
-    color: $font-color-main;
+  background-color: $base-color;
+  padding: 0px 150px;
+  color: $font-color-main;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  header {
+    width: 100px;
+    div {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  //iPad Pro Landscape
+  //1024px x 1366px
+  body {
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
 
     header {
-        div {
-            width: 8%;
+      width: 150px;
 
-            img {
-                width: 100%;
-            }
-        }
+      div {
+        width: 150px;
+      }
     }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+    //iPad Pro Portrait
+    //1024px x 1366px
+    body {
+      padding: 0px;
+      display: flex;
+      justify-content: space-between;
+  
+      header {
+        width: 150px;
+  
+        div {
+          width: 150px;
+        }
+      }
+    }
+  }
+
+@media only screen and (max-width: 768px) {
+    //iPad Portrait and Landscape
+    //768px by 1024px
+    body {
+      padding: 0px;
+      display: flex;
+      justify-content: space-between;
+  
+      header {
+        width: 150px;
+  
+        div {
+          width: 150px;
+        }
+      }
+    }
+  }
+
+@media only screen and (max-width: 414px) {
+    //iPhone 6 Plus Portrait and Landscapr
+    //414px x 736px
+    body {
+      padding: 0px;
+      display: flex;
+      justify-content: space-between;
+  
+      header {
+        width: 394px;
+  
+        div {
+          width: 394px;
+        }
+      }
+    }
+  }
+
+@media only screen and (max-width: 411px) {
+  //Pixel 2 Portrait and Landscape
+  //411px x 731px
+  //Pixel 2 XL Portrait and Landscape
+  //411px x 823px
+
+  body {
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+
+    header {
+      width: 391px;
+
+      div {
+        width: 391px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  //iPhone 6 Portrait and Landscape
+  //375px x 667px
+  //iPhone X
+  //375px x 812px
+
+  body {
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+
+    header {
+      width: 360px;
+
+      div {
+        width: 360px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  //Galaxy S5 Portrait and Landscape
+  //360px x 640px
+  body {
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+
+    header {
+      width: 350px;
+
+      div {
+        width: 350px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  //iPhone 5 Portrait and Landscape
+  //320px x 568px
+  body {
+    padding: 0px;
+    display: flex;
+
+    header {
+      width: 300px;
+
+      div {
+        width: 300px;
+      }
+    }
+  }
 }
