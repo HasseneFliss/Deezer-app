@@ -13,15 +13,15 @@ export class FanFormatterPipe implements PipeTransform {
       return '0';
     }
     const fractionSize = 1;
-    var abs = Math.abs(value);
+    let abs = Math.abs(value);
     const rounder = Math.pow(10, fractionSize);
     const isNegative = value < 0;
-    var key = '';
-    const powers = [{ key: 'Q', value: Math.pow(10, 15) }, { key: 'T', value: Math.pow(10, 12) }, 
-    { key: 'B', value: Math.pow(10, 9) }, { key: 'M', value: Math.pow(10, 6) }, 
-    { key: 'K', value: 1000 }]; 
+    let key = '';
+    const powers = [{ key: 'Q', value: Math.pow(10, 15) }, { key: 'T', value: Math.pow(10, 12) },
+    { key: 'B', value: Math.pow(10, 9) }, { key: 'M', value: Math.pow(10, 6) },
+    { key: 'K', value: 1000 }];
     for (const power of powers) {
-      var reduced = abs / power.value;
+      let reduced = abs / power.value;
       reduced = Math.round(reduced * rounder) / rounder;
       if (reduced >= 1) {
         abs = reduced;
@@ -29,7 +29,7 @@ export class FanFormatterPipe implements PipeTransform {
         break;
       }
     }
-    return (isNegative ? '-' : '') + abs + " " + key + " Fans";
+    return (isNegative ? '-' : '') + abs + ' ' + key + ' Fans';
   }
 }
 
