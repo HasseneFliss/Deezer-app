@@ -13,16 +13,14 @@ export class AlbumComponent implements OnInit {
 
   @Input()
   albumArtist: Artist;
-  albums: Albums;
-  album_list: Album[] = new Array();
+  albums: Album[];
   constructor(private albumService: AlbumService) { }
 
   ngOnInit(): void {
     this.albumService.getAlbums(this.albumArtist.id)
       .subscribe((x) => {
         if (!('error' in x)) {
-          this.albums = x;
-          this.album_list = this.albums.data;
+          this.albums = x.data;
         }
       });
   }
