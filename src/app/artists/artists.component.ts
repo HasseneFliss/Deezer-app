@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtistService } from '../services/artist.service';
-import { Artists } from '../models/artists';
 import { Artist } from '../models/artist';
 
 @Component({
@@ -10,25 +9,21 @@ import { Artist } from '../models/artist';
 })
 export class ArtistsComponent implements OnInit {
 
-  artists: Artist[] = new Array();
-  artist: Artist;
-  artistList: Artists;
-
+  artists: Artist[];
+  artists_list: Artist[] = new Array();
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    this.artistList = new Artists();
-    for (let artistNo = 2; artistNo <= 22; artistNo++) {
-      this.artistService.getArtist(artistNo)
-        .subscribe((x) => {
-          if (!('error' in x)) {
-            this.artist = x;
-            this.artists.push(this.artist);
+    this.artistService.getArtists(2, 22)
+      .subscribe((artist_x) => {
+        this.artists = new Array();
+        this.artists_list = artist_x;
+        this.artists_list.forEach(artist_each => {
+          if (!('error' in artist_each)) {
+            this.artists.push(artist_each);
           }
-
         });
-    }
-    this.artistList.artists = this.artists;
+      });
   }
 
 }

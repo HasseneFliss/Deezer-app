@@ -1,11 +1,11 @@
 <h1>Albums</h1>
-<ng-container *ngIf="album_list; then albumLoaded; else notAlbumLoaded">
+<ng-container *ngIf="albums; then albumLoaded; else notAlbumLoaded">
     
 </ng-container>
 
 <ng-template #albumLoaded>
     <div class="album-container">
-        <ng-container *ngFor="let album of album_list">
+        <ng-container *ngFor="let album of albums">
             <div class="album-card">
                 <div class="album-cover">
                     <img src="{{album.cover_big}}">
