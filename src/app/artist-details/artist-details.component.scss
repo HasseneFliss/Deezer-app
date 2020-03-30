@@ -1,10 +1,10 @@
 @import "../../style-variables.scss";
 
 .artist-details-card {
-    background-color: $secondary-color;
-    display: flex;
-    flex-wrap: wrap;
-    color: $font-color-secondary;
+  background-color: $secondary-color;
+  display: flex;
+  flex-wrap: wrap;
+  color: $font-color-secondary;
 
   .artist-details-image {
     background-color: darken($base-color, 80%);
@@ -24,14 +24,14 @@
   }
 
   h1 {
-      margin-top: 20px;
-      font-size: 4rem;
+    margin-top: 20px;
+    font-size: 4rem;
   }
 
   h2 {
-      font-size: 2rem;
+    font-size: 2rem;
   }
-
+  
 }
 
 @media only screen and (min-width: 1920px) {
