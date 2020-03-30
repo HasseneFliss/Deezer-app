@@ -9,21 +9,23 @@ import { Artist } from '../models/artist';
 })
 export class ArtistsComponent implements OnInit {
 
-  artists: Artist[] = new Array();
+  artists: Artist[];
+  artists_list: Artist[] = new Array();
   artist: Artist;
 
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    for (let artistNo = 2; artistNo <= 22; artistNo++) {
-      this.artistService.getArtist(artistNo)
-        .subscribe((x) => {
-          if (!('error' in x)) {
-            this.artists.push(x);
+    this.artistService.getArtists(2, 22)
+      .subscribe((artist_x) => {
+        this.artists = new Array();
+        this.artists_list = artist_x;
+        this.artists_list.forEach(artist_each => {
+          if (!('error' in artist_each)) {
+            this.artists.push(artist_each);
           }
-
         });
-    }
+      });
   }
 
 }
