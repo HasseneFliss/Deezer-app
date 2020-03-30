@@ -11,7 +11,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TracklistComponent implements OnInit {
 
-  tracklist: Tracklist;
   tracks: Track[];
   artistId: number;
 
@@ -21,13 +20,11 @@ export class TracklistComponent implements OnInit {
 
     this.activatedRoute.paramMap.subscribe(params => {
       this.artistId = Number(params.get('id'));
-      console.log(this.artistId);
     });
 
     this.tracklistService.getTracklist(this.artistId)
       .subscribe((x) => {
-        this.tracklist = x;
-        this.tracks = this.tracklist.data;
+        this.tracks = x.data;
       });
 
   }
