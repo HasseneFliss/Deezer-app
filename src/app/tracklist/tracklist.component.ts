@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TracklistService } from '../services/tracklist.service';
-import { Tracklist } from '../models/tracklist';
 import { Track } from '../models/track';
 import { ActivatedRoute } from '@angular/router';
 
