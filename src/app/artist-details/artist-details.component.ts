@@ -20,7 +20,6 @@ export class ArtistDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedroute.paramMap.subscribe(params => {
       this.artistId = Number(params.get('id'));
-      console.log(this.artistId);
 
       this.artistService.getArtist(this.artistId)
         .subscribe((x) => {
