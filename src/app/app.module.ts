@@ -14,7 +14,7 @@ import { ArtistDetailsComponent } from './artist-details/artist-details.componen
 import { TracklistComponent } from './tracklist/tracklist.component';
 import { TrackComponent } from './track/track.component';
 import { DurationFormatterPipe } from './pipes/duration-formatter.pipe';
-import { AlbumComponent } from './album/album.component';
+import { AlbumComponent } from './albums/albums.component';
 import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({

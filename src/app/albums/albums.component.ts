@@ -1,13 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Artist } from '../models/artist';
 import { AlbumService } from '../services/album.service';
-import { Albums } from '../models/albums';
 import { Album } from '../models/album';
 
 @Component({
-  selector: 'app-album',
-  templateUrl: './album.component.html',
-  styleUrls: ['./album.component.scss']
+  selector: 'app-albums',
+  templateUrl: './albums.component.html',
+  styleUrls: ['./albums.component.scss']
 })
 export class AlbumComponent implements OnInit {
 
