@@ -11,7 +11,6 @@ export class ArtistsComponent implements OnInit {
 
   artists: Artist[];
   artists_list: Artist[] = new Array();
-  
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
