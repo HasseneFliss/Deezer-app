@@ -9,21 +9,42 @@ import { Artist } from '../models/artist';
 })
 export class ArtistsComponent implements OnInit {
 
-  artists: Artist[];
+  searchInput: string = '';
+  artists: Artist[] = new Array();;
   artists_list: Artist[] = new Array();
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    this.artistService.getArtists(2, 22)
-      .subscribe((artist_x) => {
-        this.artists = new Array();
-        this.artists_list = artist_x;
-        this.artists_list.forEach(artist_each => {
-          if (!('error' in artist_each)) {
-            this.artists.push(artist_each);
-          }
+    this.searchArtist();
+  }
+
+  searchArtist(): void {
+    this.artists = new Array();
+    let numbers = this.artistRandomTwenty(10);
+    console.log(numbers[0] + ' ' + numbers[1]);
+
+    if (this.searchInput == '') {
+      this.artistService.getArtists(numbers[0], numbers[1])
+        .subscribe((artist_x) => {
+          this.artists_list = artist_x;
+          this.artists_list.forEach(artist_each => {
+            if (!('error' in artist_each)) {
+              this.artists.push(artist_each);
+            }
+          });
+        });
+    } else {
+      this.artistService.searchArtist(this.searchInput).subscribe((searchResult) => {
+        searchResult.data.forEach(searchArtist => {
+          this.artists.push(searchArtist);
         });
       });
+    }
+  }
+
+  artistRandomTwenty(additionalArtists: number): number[] {
+    let number = Math.round(Math.random()*1000);
+    return [number, (number + additionalArtists)];
   }
 
 }
