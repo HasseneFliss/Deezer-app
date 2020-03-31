@@ -15,7 +15,7 @@ export class ArtistsComponent implements OnInit {
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    this.defaultArtists(2, 22)
+    this.defaultArtists(2, 22);
   }
 
   searchArtist(): void {
@@ -42,6 +42,6 @@ export class ArtistsComponent implements OnInit {
           }
         });
       });
-  };
+  }
 
 }
