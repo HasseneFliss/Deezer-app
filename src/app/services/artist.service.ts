@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, range, observable } from 'rxjs';
+import { Observable, range } from 'rxjs';
 import { map, mergeMap, toArray } from 'rxjs/operators';
 import { Artist } from '../models/artist';
 import { environment } from 'src/environments/environment';
