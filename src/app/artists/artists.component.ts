@@ -15,24 +15,13 @@ export class ArtistsComponent implements OnInit {
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    this.searchArtist();
+    this.defaultArtists(2, 22)
   }
 
   searchArtist(): void {
     this.artists = new Array();
-    const numbers = this.artistRandomTwenty(10);
-    console.log(numbers[0] + ' ' + numbers[1]);
-
-    if (this.searchInput === '') {
-      this.artistService.getArtists(numbers[0], numbers[1])
-        .subscribe((artist_x) => {
-          this.artists_list = artist_x;
-          this.artists_list.forEach(artist_each => {
-            if (!('error' in artist_each)) {
-              this.artists.push(artist_each);
-            }
-          });
-        });
+    if ((this.searchInput === '') || (this.searchInput === ' ')) {
+      this.defaultArtists(2, 22);
     } else {
       this.artistService.searchArtist(this.searchInput).subscribe((searchResult) => {
         searchResult.data.forEach(searchArtist => {
@@ -42,9 +31,17 @@ export class ArtistsComponent implements OnInit {
     }
   }
 
-  artistRandomTwenty(additionalArtists: number): number[] {
-    const number = Math.round(Math.random() * 1000);
-    return [number, (number + additionalArtists)];
-  }
+  defaultArtists(lowerLimit: number, upperLimit: number): void {
+    this.artists = new Array();
+    this.artistService.getArtists(lowerLimit, upperLimit)
+      .subscribe((artist_x) => {
+        this.artists_list = artist_x;
+        this.artists_list.forEach(artist_each => {
+          if (!('error' in artist_each)) {
+            this.artists.push(artist_each);
+          }
+        });
+      });
+  };
 
 }
