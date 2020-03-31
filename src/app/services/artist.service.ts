@@ -24,7 +24,7 @@ export class ArtistService {
   }
 
   searchArtist(name: string): Observable<Search> {
-    let data = this.http.get<Search>(`${environment.apiSearch}${name}"`)
+    const data = this.http.get<Search>(`${environment.apiSearch}${name}"`)
       .pipe(
         map(x => x));
     return data;
