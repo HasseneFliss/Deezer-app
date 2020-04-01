@@ -61,3 +61,20 @@ https://deezer-6cd6d.firebaseapp.com
             - Formats the duration of each track in a time format
         * fan-formatter
             - Formats the amount of fans each artist has to a numerical M, K, or single fan
+
+### Screenshots:
+## Loading Screen Image
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/loading-screen.PNG)
+
+## Artist View Web
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-view-web.PNG)
+
+## Artist View Mobile
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-view-mobile.PNG)
+
+## Artist Details View Web
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-details-view-web.PNG)
+
+## Artist Details View Mobile
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-details-view-mobile-1.PNG)
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-details-view-mobile-2.PNG)
