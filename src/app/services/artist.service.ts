@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, range, observable } from 'rxjs';
+import { Observable, range } from 'rxjs';
 import { map, mergeMap, toArray } from 'rxjs/operators';
 import { Artist } from '../models/artist';
 import { environment } from 'src/environments/environment';
+import { Search } from '../models/search';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,13 @@ export class ArtistService {
         map(x => this.getArtist(x)),
         mergeMap(x => x),
         toArray());
+  }
+
+  searchArtist(name: string): Observable<Search> {
+    const data = this.http.get<Search>(`${environment.apiSearch}${name}"`)
+      .pipe(
+        map(x => x));
+    return data;
   }
 
 }

@@ -9,16 +9,33 @@ import { Artist } from '../models/artist';
 })
 export class ArtistsComponent implements OnInit {
 
-  artists: Artist[];
-  artists_list: Artist[] = new Array();
+  searchInput: string;
+  artists: Artist[] = new Array();
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    this.artistService.getArtists(2, 22)
+    this.defaultArtists(2, 12);
+  }
+
+  searchArtist(): void {
+    this.artists = new Array();
+    if ((this.searchInput === '') || (this.searchInput === ' ')) {
+      this.defaultArtists(2, 12);
+    } else {
+      this.artistService.searchArtist(this.searchInput).subscribe((searchResult) => {
+        searchResult.data.forEach(searchArtist => {
+          this.artists.push(searchArtist);
+        });
+      });
+    }
+  }
+
+  defaultArtists(lowerLimit: number, upperLimit: number): void {
+    this.artists = new Array();
+    this.artistService.getArtists(lowerLimit, upperLimit)
       .subscribe((artist_x) => {
-        this.artists = new Array();
-        this.artists_list = artist_x;
-        this.artists_list.forEach(artist_each => {
+        const artists_list = artist_x;
+        artists_list.forEach(artist_each => {
           if (!('error' in artist_each)) {
             this.artists.push(artist_each);
           }

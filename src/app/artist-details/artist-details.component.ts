@@ -10,7 +10,6 @@ import { ArtistService } from '../services/artist.service';
 })
 export class ArtistDetailsComponent implements OnInit {
 
-  @Input()
   artist: Artist;
   artistId: number;
 
