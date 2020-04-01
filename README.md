@@ -1,35 +1,80 @@
-# DeezerApp
+# Deezer Music Database Application
 
-## Badges
 [![CircleCI](https://circleci.com/gh/FRossouw/Deezer-app.svg?style=svg)](https://circleci.com/gh/FRossouw/Deezer-app)
 
-## Project Links 
-### Hosting URL
+## Introduction
+This application pulls artist data from the Deezer music database, then displays this information in an easy to understand format.
+
+A user can:
+* Search for an artist of their choice.
+* Click on an artist to view their details:
+    * View the artists top five tracks.
+    * View the albums the artist released.
+
+Project assignment details:
+https://github.com/DVT/musicdb-app-angular
+
+### Website Hosting URL
+Access this application at this website:
 https://deezer-6cd6d.firebaseapp.com
 
-### Project Console
-https://console.firebase.google.com/project/deezer-6cd6d/overview
+### Resources Used
+1.  Project CI CD Pipeline:
+    * Circle CI
+    * https://circleci.com/dashboard
 
-## Development server
+2.  Deezer developers API for data:
+    * https://developers.deezer.com
+    * Same origin restriction on certain browsers: https://cors-anywhere.herokuapp.com/ 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. Angular 8 was used as the project scaffolding:
 
-## Code scaffolding
+    1.  The styling which was used for the porject: 
+        * SCSS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    2.  The models which were used:
+        * Album
+        * Albums
+        * Artist
+        * Track
+        * Tracklist
+    3.  The components which were used:
+        * albums
+        * artist
+        * artists
+        * artist-details
+        * loading
+        * page-not-found
+        * track
+        * tracklist
 
-## Build
+    4.  The services which were used:
+        * album service
+            - Retrieves information about all albums an artist has
+        * artist service
+            - Retrieves information about various or single artists
+        * tracklist service
+            - Retrieves the top five tracks of a specific artist
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    5.  The pipes which were used:
+        * duration-formatter
+            - Formats the duration of each track in a time format
+        * fan-formatter
+            - Formats the amount of fans each artist has to a numerical M, K, or single fan
 
-## Running unit tests
+### Screenshots:
+## Loading Screen Image
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/loading-screen.PNG)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Artist View Web
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-view-web.PNG)
 
-## Running end-to-end tests
+## Artist View Mobile
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-view-mobile.PNG)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Artist Details View Web
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-details-view-web.PNG)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Artist Details View Mobile
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-details-view-mobile-1.PNG)
+![](https://raw.githubusercontent.com/FRossouw/Deezer-app/development/screenshots/artist-details-view-mobile-2.PNG)

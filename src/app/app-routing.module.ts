@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ArtistComponent } from './artist/artist.component';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
 import { ArtistsComponent } from './artists/artists.component';
-import { AlbumComponent } from './album/album.component';
+import { AlbumComponent } from './albums/albums.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'artist'
+    component: PageNotFoundComponent
   }
 ];
 

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtistService } from '../services/artist.service';
-import { Artists } from '../models/artists';
 import { Artist } from '../models/artist';
 
 @Component({
@@ -10,25 +9,38 @@ import { Artist } from '../models/artist';
 })
 export class ArtistsComponent implements OnInit {
 
+  searchInput: string;
   artists: Artist[] = new Array();
-  artist: Artist;
-  artistList: Artists;
-
   constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
-    this.artistList = new Artists();
-    for (let artistNo = 2; artistNo <= 22; artistNo++) {
-      this.artistService.getArtist(artistNo)
-        .subscribe((x) => {
-          if (!('error' in x)) {
-            this.artist = x;
-            this.artists.push(this.artist);
-          }
+    this.defaultArtists(2, 12);
+  }
 
+  searchArtist(): void {
+    this.artists = new Array();
+    if ((this.searchInput === '') || (this.searchInput === ' ')) {
+      this.defaultArtists(2, 12);
+    } else {
+      this.artistService.searchArtist(this.searchInput).subscribe((searchResult) => {
+        searchResult.data.forEach(searchArtist => {
+          this.artists.push(searchArtist);
         });
+      });
     }
-    this.artistList.artists = this.artists;
+  }
+
+  defaultArtists(lowerLimit: number, upperLimit: number): void {
+    this.artists = new Array();
+    this.artistService.getArtists(lowerLimit, upperLimit)
+      .subscribe((artist_x) => {
+        const artists_list = artist_x;
+        artists_list.forEach(artist_each => {
+          if (!('error' in artist_each)) {
+            this.artists.push(artist_each);
+          }
+        });
+      });
   }
 
 }

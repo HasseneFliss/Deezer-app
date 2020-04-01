@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TracklistService } from '../services/tracklist.service';
-import { Tracklist } from '../models/tracklist';
 import { Track } from '../models/track';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,23 +10,20 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TracklistComponent implements OnInit {
 
-  tracklist: Tracklist;
   tracks: Track[];
   artistId: number;
 
-  constructor(private activatedroute: ActivatedRoute, private tracklistService: TracklistService) { }
+  constructor(private activatedRoute: ActivatedRoute, private tracklistService: TracklistService) { }
 
   ngOnInit(): void {
 
-    this.activatedroute.paramMap.subscribe(params => {
+    this.activatedRoute.paramMap.subscribe(params => {
       this.artistId = Number(params.get('id'));
-      console.log(this.artistId);
     });
 
     this.tracklistService.getTracklist(this.artistId)
       .subscribe((x) => {
-        this.tracklist = x;
-        this.tracks = this.tracklist.data;
+        this.tracks = x.data;
       });
 
   }
