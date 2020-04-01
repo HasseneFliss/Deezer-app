@@ -3,7 +3,7 @@
 
 <ng-template #loadedArtist>
     <div id="search">
-        <input type="text" [(ngModel)]="searchInput" ng-model-options="{ debounceTime: 2000 }" (keyup)="searchArtist()" placeholder="Search for an artist" />
+        <input type="text" [(ngModel)]="searchInput" (keyup)="searchArtist()" placeholder="Search for an artist" />
     </div>
     <div class="artists-container">
         <ng-container *ngFor="let artist of artists">
